@@ -22,4 +22,18 @@ function addEmployee() {
 
 function render() {
   console.log('ready to render');
+  //idea is to render the employeeArr into the DOM
+  console.log('ghghghgh', $('#container-row'));
+  $('#container-row').empty();
+  for (let employee of employeeArr) {
+    $('#container-row').append(`
+    <tr id="containter-row">
+    <td>${employee.firstname}</td>
+    <td>${employee.lastname}</td>
+    <td>${employee.ID}</td>
+    <td>${employee.title}</td>
+    <td>${employee.annualSalary}</td>
+    <td><button id="delete-btn">Delete</button></td>
+    </tr>`);
+  }
 }

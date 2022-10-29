@@ -41,7 +41,12 @@ function calculateTotalMonthly() {
     totalMonthly += Number(employee.annualSalary);
     console.log(totalMonthly);
   }
-  return totalMonthly;
+  if (totalMonthly <= 20000) {
+    return totalMonthly;
+  } else {
+    $('#right-align').addClass('red-alert');
+    return totalMonthly;
+  }
 }
 
 function render() {

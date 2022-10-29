@@ -6,6 +6,7 @@ function onReady() {
 }
 
 let employeeArr = [];
+let totalMonthly = 0;
 
 function addEmployee() {
   console.log('in addEmployee');
@@ -19,11 +20,25 @@ function addEmployee() {
   employeeArr.push(employee);
   render();
 }
+function calculateTotalMonthly() {
+  let totalMonthly = 0;
+  console.log(employeeArr);
+  for (let employee of employeeArr) {
+    totalMonthly += Number(employee.annualSalary);
+    console.log(totalMonthly);
+  }
+  return totalMonthly;
+}
 
 function render() {
   console.log('ready to render');
+  //clear the inputs
+  $('#input-last-name').val('');
+  $('#input-first-name').val('');
+  $('#input-ID').val('');
+  $('#input-annual-salary').val('');
+  $('#input-title').val('');
   //idea is to render the employeeArr into the DOM
-  console.log('ghghghgh', $('#container-row'));
   $('#container-row').empty();
   for (let employee of employeeArr) {
     $('#container-row').append(`
@@ -36,4 +51,11 @@ function render() {
     <td><button id="delete-btn">Delete</button></td>
     </tr>`);
   }
+  //calculate the total monthly
+  let totalMonthly = calculateTotalMonthly();
+  //render it to the DOM
+  $('#right-align').empty();
+  $('#right-align').append(`
+    <h2 id="right-align">Total Monthly: $${totalMonthly}</h2>
+    `);
 }

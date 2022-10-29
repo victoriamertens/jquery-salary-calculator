@@ -3,6 +3,11 @@ $(document).ready(onReady);
 function onReady() {
   console.log('jquery and javascript ready');
   $('#submit-btn').on('click', addEmployee);
+  $('#container').on(
+    'click',
+    '#container-row #delete-btn-td #delete-btn',
+    removeEmployee
+  );
 }
 
 let employeeArr = [];
@@ -20,6 +25,13 @@ function addEmployee() {
   employeeArr.push(employee);
   render();
 }
+
+function removeEmployee() {
+  console.log('ready to remove');
+  //select the specific row information
+  //empty those specific contents
+}
+
 function calculateTotalMonthly() {
   let totalMonthly = 0;
   console.log(employeeArr);
@@ -39,16 +51,16 @@ function render() {
   $('#input-annual-salary').val('');
   $('#input-title').val('');
   //idea is to render the employeeArr into the DOM
-  $('#container-row').empty();
+  $('#container').empty();
   for (let employee of employeeArr) {
-    $('#container-row').append(`
-    <tr id="containter-row">
+    $('#container').append(`
+    <tr id="container-row">
     <td>${employee.firstname}</td>
     <td>${employee.lastname}</td>
     <td>${employee.ID}</td>
     <td>${employee.title}</td>
     <td>${employee.annualSalary}</td>
-    <td><button id="delete-btn">Delete</button></td>
+    <td id="delete-btn-td"><button id="delete-btn">Delete</button></td>
     </tr>`);
   }
   //calculate the total monthly

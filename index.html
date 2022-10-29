@@ -35,14 +35,14 @@
             <th></th>
           </tr>
         </thead>
-        <tbody id="container-row">
-          <tr>
-            <td>FIRST NAME</td>
-            <td>LAST NAME</td>
-            <td>ID</td>
-            <td>TITLE</td>
-            <td>ANNUAL SALARY</td>
-            <td><button id="delete-btn">Delete</button></td>
+        <tbody id="container">
+          <tr id="container-row">
+            <td>${employee.firstname}</td>
+            <td>${employee.lastname}</td>
+            <td>${employee.ID}</td>
+            <td>${employee.title}</td>
+            <td>${employee.annualSalary}</td>
+            <td id="delete-btn-td"><button id="delete-btn">Delete</button></td>
           </tr>
         </tbody>
         <tr id="table-footer">

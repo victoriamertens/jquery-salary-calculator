@@ -29,6 +29,8 @@ function addEmployee() {
 function removeEmployee() {
   console.log('ready to remove');
   //select the specific row information
+  let deleteBtn = $(this);
+  deleteBtn.parent().parent().empty();
   //empty those specific contents
 }
 

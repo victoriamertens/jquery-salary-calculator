@@ -1,6 +1,4 @@
-# Project Name
-
-Salary Calculator - jQuery
+# Salary Calculator - jQuery
 
 ## Description
 

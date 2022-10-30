@@ -1,9 +1,17 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Salary Calculator - jQuery
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Duration: 6 hours
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+For this project, I used jQuery to create an application that collected and saved employee information (name, ID, job title, and annual salary) and used it to calculate end budget of the company. This allows for ease of collecting and representing employee wages.
+
+<img href="wireframe.png">
+
+### Built with
+
+Javascript
+jQuery
+HTML and CSS

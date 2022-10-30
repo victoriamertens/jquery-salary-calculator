@@ -1,7 +1,6 @@
 $(document).ready(onReady);
 
 function onReady() {
-  console.log('jquery and javascript ready');
   $('#submit-btn').on('click', addEmployee);
   $('#container').on(
     'click',
@@ -27,19 +26,29 @@ function addEmployee() {
 }
 
 function removeEmployee() {
-  console.log('ready to remove');
+  let newEmployeeArr = [];
+  console.log('in Remove Employee');
   //select the specific row information
   let deleteBtn = $(this);
-  deleteBtn.parent().parent().empty();
+  let deletedEmployeeID = deleteBtn.parent().siblings().eq(2).text();
+  console.log(deletedEmployeeID);
+
+  for (let employee of employeeArr) {
+    console.log(employee.ID);
+    if (employee.ID !== deletedEmployeeID) {
+      newEmployeeArr.push(employee);
+    }
+  }
+  employeeArr = newEmployeeArr;
+  render();
   //empty those specific contents
 }
 
 function calculateTotalMonthly() {
   let totalMonthly = 0;
-  console.log(employeeArr);
+
   for (let employee of employeeArr) {
     totalMonthly += Number(employee.annualSalary);
-    console.log(totalMonthly);
   }
   if (totalMonthly <= 20000) {
     return totalMonthly;
@@ -50,7 +59,7 @@ function calculateTotalMonthly() {
 }
 
 function render() {
-  console.log('ready to render');
+  console.log('in render');
   //clear the inputs
   $('#input-last-name').val('');
   $('#input-first-name').val('');
@@ -66,7 +75,7 @@ function render() {
     <td>${employee.lastname}</td>
     <td>${employee.ID}</td>
     <td>${employee.title}</td>
-    <td> $ ${employee.annualSalary}</td>
+    <td id="salary-delete"> $ ${employee.annualSalary}</td>
     <td id="delete-btn-td"><button id="delete-btn">Delete</button></td>
     </tr>`);
   }

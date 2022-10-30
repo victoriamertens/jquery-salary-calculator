@@ -15,12 +15,16 @@
     </header>
     <section id="add-employee">
       <h2>Add Employee</h2>
-      <input id="input-first-name" placeholder="First Name" />
-      <input id="input-last-name" placeholder="Last Name" />
-      <input id="input-ID" placeholder="ID" />
-      <input id="input-title" placeholder="Title" />
-      <input id="input-annual-salary" placeholder="Annual Salary" />
-      <button type="submit" id="submit-btn">Submit</button>
+      <div id="inputs">
+        <input id="input-first-name" placeholder="First Name" />
+        <input id="input-last-name" placeholder="Last Name" />
+        <input id="input-ID" placeholder="ID" />
+        <input id="input-title" placeholder="Title" />
+        <input id="input-annual-salary" placeholder="Annual Salary" />
+      </div>
+      <div id="div-btn">
+        <button type="submit" id="submit-btn">Submit</button>
+      </div>
     </section>
     <section id="employee-list">
       <h2>Employees</h2>
@@ -32,22 +36,13 @@
             <th>ID</th>
             <th>Title</th>
             <th>Annual Salary</th>
-            <th></th>
+            <th id="delete-button-space"></th>
           </tr>
         </thead>
-        <tbody id="container">
-          <tr id="container-row">
-            <td>${employee.firstname}</td>
-            <td>${employee.lastname}</td>
-            <td>${employee.ID}</td>
-            <td>${employee.title}</td>
-            <td>${employee.annualSalary}</td>
-            <td id="delete-btn-td"><button id="delete-btn">Delete</button></td>
-          </tr>
-        </tbody>
-        <tr id="table-footer">
-          <td></td>
-        </tr>
+        <tbody id="container"></tbody>
+        <tfoot>
+          <tr id="t-foot"></tr>
+        </tfoot>
       </table>
     </section>
     <section id="total-budget">

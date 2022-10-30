@@ -66,7 +66,7 @@ function render() {
     <td>${employee.lastname}</td>
     <td>${employee.ID}</td>
     <td>${employee.title}</td>
-    <td>${employee.annualSalary}</td>
+    <td> $ ${employee.annualSalary}</td>
     <td id="delete-btn-td"><button id="delete-btn">Delete</button></td>
     </tr>`);
   }
